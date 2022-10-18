@@ -1,0 +1,6 @@
+.game-board {
+    overflow: hidden;
+    height: 100%;
+    width: 500px;
+    background-color: green;
+}
