@@ -2,5 +2,85 @@
     float: left;
     height: 100%;
     width: 200px;
-    background-color: red;
+    background-color: var(--primary_color);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.fullscreen_button {
+    cursor: pointer;
+    background-image: url(../../assets/fullscreen.png);
+    width: 73px;
+    height: 48px;
+    border: none;
+}
+
+.game_name {
+    font-size: 30px;
+}
+.score {
+    border: 1px #676a92 solid;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.best {
+    border: 1px #676a92 solid;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-decoration: solid;
+    color: #c9c243;
+}
+
+.next {
+    display: inline-block;
+    div {
+        background-color: var(--field_color);
+        border: 1px solid var(--border_color);
+        width: 50px;
+        height: 50px;
+        float: left;
+        background-image: url(../../assets/kulki.png);
+    }
+}
+
+.blue {
+    background-position: 3px -48px;
+}
+
+.purple {
+    background-position: 3px -98px;
+}
+
+.green {
+    background-position: 3px -148px;
+}
+
+.yellow {
+    background-position: 3px -198px;
+}
+
+.orange {
+    background-position: 3px -248px;
+}
+
+.brown {
+    background-position: 3px -298px;
+}
+
+.light_blue {
+    background-position: 3px -348px;
+}
+
+.new_game_button {
+    border: 1px #676a92 solid;
+    border-radius: 2px;
+    opacity: 0.5;
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }

@@ -1,3 +1,27 @@
 <div class="scoreboard">
-
+    <button class="fullscreen_button" (click)="fullscreen()"></button>
+    <br><br><br>
+    <i class="game_name">KULKI</i>
+    <br><br><br>
+    <div class="score">
+        WYNIK
+        <br>
+    1234
+    </div>
+    <br><br>
+    <div class="best">
+        REKORD
+        <br>
+        2345
+    </div>
+    <br><br>
+    <div class="next">
+        <div *ngFor="let field of next; index as i;"
+        [ngClass]="{'blue': next[i] == 'blue', 'purple': next[i] == 'purple',
+        'green': next[i] == 'green', 'yellow': next[i] == 'yellow',
+        'orange': next[i] == 'orange', 'brown': next[i] == 'brown',
+        'light_blue': next[i] == 'light_blue'}"></div>
+    </div>
+    <br><br>
+    <button class="new_game_button">NOWA GRA</button>
 </div>
