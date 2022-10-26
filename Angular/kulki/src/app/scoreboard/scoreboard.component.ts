@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { GameService } from '../game.service';
 
 @Component({
     selector: 'app-scoreboard',
@@ -11,7 +12,7 @@ export class ScoreboardComponent implements OnInit {
     fullscreen_on: boolean = false;
     next: string[] = ['blue', 'green', 'yellow']
 
-    constructor(@Inject(DOCUMENT) private document: any) { }
+    constructor(@Inject(DOCUMENT) private document: any, private gameService: GameService) { }
 
     ngOnInit(): void {
         this.elem = document.documentElement;
@@ -49,4 +50,19 @@ export class ScoreboardComponent implements OnInit {
         }
     }
 
+    show_score(): number {
+        return this.gameService.get_score();
+    }
+
+    show_best(): number {
+        return this.gameService.get_best();
+    }
+
+    new_game(): void {
+        this.gameService.new_game_call();
+    }
+
+    get_next(): string[] {
+        return this.gameService.get_next();
+    }
 }

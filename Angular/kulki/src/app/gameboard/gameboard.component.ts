@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-gameboard',
@@ -8,12 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class GameboardComponent implements OnInit {
     fields: string[] = new Array(81);
     choosen_field: number = -1;
-    possible_colors: string[] = ['blue', 'purple', 'green', 'yellow', 'orange', 'brown', 'light_blue'];
     game_over: boolean = false;
     to_clear: number[] = new Array();
-    score: number = 0;
 
-    constructor() { }
+    constructor(private gameService: GameService) { }
 
     ngOnInit(): void {
         for (let i = 0; i < 81; i++) {
@@ -21,6 +20,8 @@ export class GameboardComponent implements OnInit {
         }
         
         this.add_random();
+
+        this.gameService.new_game_observable.subscribe(x => {this.new_game();});
     }
 
     choose_field(field_num: number): void {
@@ -113,7 +114,7 @@ export class GameboardComponent implements OnInit {
             in_row++;
         }
         
-        this.score = this.score + 10 * Math.pow(2, in_row - 5);
+        this.gameService.add_to_score(10 * Math.pow(2, in_row - 5));
     }
 
     check_vertically(): void {
@@ -151,7 +152,7 @@ export class GameboardComponent implements OnInit {
             in_row++;
         }
         
-        this.score = this.score + 10 * Math.pow(2, in_row - 5);
+        this.gameService.add_to_score(10 * Math.pow(2, in_row - 5));
     }
 
     check_diagonally(): void {
@@ -196,7 +197,7 @@ export class GameboardComponent implements OnInit {
             in_row++;
         }
         
-        this.score = this.score + 10 * Math.pow(2, in_row - 5);
+        this.gameService.add_to_score(10 * Math.pow(2, in_row - 5));
     }
 
     check_diagonally_2(): void {
@@ -234,7 +235,7 @@ export class GameboardComponent implements OnInit {
             in_row++;
         }
         
-        this.score = this.score + 10 * Math.pow(2, in_row - 5);
+        this.gameService.add_to_score(10 * Math.pow(2, in_row - 5));
     }
 
     check_diagonally_3(): void {
@@ -272,7 +273,7 @@ export class GameboardComponent implements OnInit {
             in_row++;
         }
         
-        this.score = this.score + 10 * Math.pow(2, in_row - 5);
+        this.gameService.add_to_score(10 * Math.pow(2, in_row - 5));
     }
 
     check_diagonally_4(): void {
@@ -310,7 +311,7 @@ export class GameboardComponent implements OnInit {
             in_row++;
         }
         
-        this.score = this.score + 10 * Math.pow(2, in_row - 5);
+        this.gameService.add_to_score(10 * Math.pow(2, in_row - 5));
     }
 
     clear_rows(): void {
@@ -329,14 +330,12 @@ export class GameboardComponent implements OnInit {
             }
         }
 
-        let random_colors: string[] = new Array();
-        for(let i = 0; i < 3; i++) {
-            random_colors.push(this.possible_colors[this.random_int_in_range(0, this.possible_colors.length - 1)]);
-        }
+        let random_colors: string[] = this.gameService.get_next();
+        this.gameService.random_next();
 
         if(empty_fields.length > 3) {
             for(let i = 0; i < 3; i++) {
-                let random_field_number: number = empty_fields[this.random_int_in_range(0, empty_fields.length - 1)];
+                let random_field_number: number = empty_fields[this.gameService.random_int_in_range(0, empty_fields.length - 1)];
                 this.fields[random_field_number] = random_colors[i];
                 empty_fields.splice(random_field_number, 1);
             }
@@ -355,11 +354,7 @@ export class GameboardComponent implements OnInit {
         }
 
         this.game_over = false;
+        this.gameService.set_score(0);
         this.add_random();
     }
-
-    random_int_in_range(min: number, max: number): number {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-
 }
