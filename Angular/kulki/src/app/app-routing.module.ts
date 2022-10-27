@@ -10,6 +10,7 @@ const routes: Routes = [
     {path: 'kulki', component: GameWrapperComponent},
     {path: 'zasady_gry', component: GameRulesComponent},
     {path: 'waluty', component: CurrienciesComponent},
+    {path: 'readme', loadChildren: () => import('./readme/readme.module').then(m => m.ReadmeModule)},
     {path: '**', component: PageNotFoundComponent}
 ];
 
