@@ -22,7 +22,6 @@ export class GameboardComponent implements OnInit {
         this.add_random();
 
         this.gameService.new_game_observable.subscribe(x => {this.new_game();});
-        this.game_over = true;
     }
 
     choose_field(field_num: number): void {
