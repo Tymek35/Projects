@@ -1,0 +1,20 @@
+.navigation_bar {
+    width: 50%;
+    min-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25px;
+    background-color: var(--primary_color);
+    display: flex;
+    div {
+        border: 1px solid var(--border_color);
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        flex: 1;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
