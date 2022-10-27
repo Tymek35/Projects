@@ -61,10 +61,10 @@ export class GameboardComponent implements OnInit {
                 reached = true;
             } else {
                 fields_visited[field] = true;
-                if(field - 9 > 0 && this.fields[field - 9] == 'none' && !fields_visited[field - 9]) {
+                if(field - 9 >= 0 && this.fields[field - 9] == 'none' && !fields_visited[field - 9]) {
                     stack.push(field - 9);
                 }
-                if(field - 1 > 0 && field % 9 != 0 && this.fields[field - 1] == 'none' && !fields_visited[field - 1]) {
+                if(field - 1 >= 0 && field % 9 != 0 && this.fields[field - 1] == 'none' && !fields_visited[field - 1]) {
                     stack.push(field - 1);
                 }
                 if(field + 1 < 81 && field % 9 != 8 && this.fields[field + 1] == 'none' && !fields_visited[field + 1]) {
