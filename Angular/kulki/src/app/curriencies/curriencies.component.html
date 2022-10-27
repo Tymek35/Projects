@@ -1,1 +1,16 @@
-<p>curriencies works!</p>
+<div class="currencies_wrapper">
+    <div class="error" *ngIf="error">
+        Błąd przy pobieraniu kursów walut!<br><br>
+        <button class="game_over_button" (click)="get_currencies()">Pobierz kursy ponownie</button>
+    </div>
+    <p class="date">
+        Kursy walut na dzień: {{current_date | date:"dd.MM.yyy"}}
+    </p>
+    <div class="exchange_rates">
+        <div *ngFor="let cur of currencies; index as i;" class="exchange_card">
+            1&nbsp;{{cur | uppercase}}<br>
+            =<br>
+            {{currencies_value[i]}}&nbsp;PLN
+        </div>
+    </div>
+</div>
