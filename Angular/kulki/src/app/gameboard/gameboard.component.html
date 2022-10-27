@@ -1,0 +1,16 @@
+<div class="gameboard">
+    <div class="game_over" *ngIf="game_over">
+        <div class="game_over_popup">
+            Koniec gry!<br><br>
+            <button class="game_over_button" (click)="new_game()">Nowa gra</button>
+        </div>
+    </div>
+    <div class="game_table_container">
+        <div *ngFor="let field of fields; index as i;"
+        [ngClass]="{'blue': fields[i] == 'blue', 'purple': fields[i] == 'purple',
+        'green': fields[i] == 'green', 'yellow': fields[i] == 'yellow',
+        'orange': fields[i] == 'orange', 'brown': fields[i] == 'brown',
+        'light_blue': fields[i] == 'light_blue', 'choosen': choosen_field == i}"
+        (click)="choose_field(i)"></div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+.gameboard {
+    overflow: hidden;
+    height: 100%;
+    width: 500px;
+    background-color: var(--primary_color);
+    overflow: hidden;
+}
+
+.game_table_container {
+    padding: 12.5px;
+    height: 100%;
+    width: 100%;
+    div {
+        background-color: var(--field_color);
+        border: 1px solid var(--border_color);
+        width: 50px;
+        height: 50px;
+        float: left;
+        background-image: url(../../assets/kulki.png);
+    }
+}
+
+.blue {
+    background-position: 3px -48px;
+}
+
+.purple {
+    background-position: 3px -98px;
+}
+
+.green {
+    background-position: 3px -148px;
+}
+
+.yellow {
+    background-position: 3px -198px;
+}
+
+.orange {
+    background-position: 3px -248px;
+}
+
+.brown {
+    background-position: 3px -298px;
+}
+
+.light_blue {
+    background-position: 3px -348px;
+}
+
+.choosen {
+    animation: blink-animation 2s steps(20) infinite;
+    -webkit-animation: blink-animation 2s steps(20) infinite;
+}
+@keyframes blink-animation {
+    0% {opacity: 0.1;}
+    15% {opacity: 0.5;}
+    50% {opacity: 0.9;}
+    85% {opacity: 0.5;}
+    100% {opacity: 0.1;}
+}
+@-webkit-keyframes blink-animation {
+    0% {opacity: 0.1;}
+    15% {opacity: 0.5;}
+    50% {opacity: 0.9;}
+    85% {opacity: 0.5;}
+    100% {opacity: 0.1;}
+}
+
+.game_over {
+    position: absolute;
+    width: 464.4px;
+    height: 464.4px;
+    opacity: 0.75;
+    background-color: black;
+    background-image: none;
+    left: 212.5px;
+    top: 12.5px;
+    text-align: center;
+    color: white;
+}
+
+.game_over_popup {
+    position: relative;
+    top: 200px;
+}
+
+.game_over_button {
+    cursor: pointer;
+}
