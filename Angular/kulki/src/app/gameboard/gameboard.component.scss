@@ -1,9 +1,9 @@
 .gameboard {
-    overflow: hidden;
     height: 100%;
     width: 500px;
     background-color: var(--primary_color);
     overflow: hidden;
+    position: relative;
 }
 
 .game_table_container {
@@ -74,8 +74,8 @@
     opacity: 0.75;
     background-color: black;
     background-image: none;
-    left: 212.5px;
-    top: 12.5px;
+    top: 10px;
+    left: 12.5px;
     text-align: center;
     color: white;
 }
