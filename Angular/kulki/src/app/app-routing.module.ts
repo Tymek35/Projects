@@ -15,6 +15,7 @@ const routes: Routes = [
         {path: 'waluty', component: CurrienciesComponent},
         {path: 'readme', component: ReadmeComponent},
     ]},
+    {path: 'lazy_loading', loadChildren: () => import('./lazy-loading/lazy-loading.module').then(m => m.LazyLoadingModule)},
     {path: '**', component: PageNotFoundComponent}
 ];
 
