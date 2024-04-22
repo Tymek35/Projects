@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReadmeComponent } from './readme/readme.component';
+import { KulkiAppWrapperComponent } from './kulki-app-wrapper/kulki-app-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     CurrienciesComponent,
     FooterComponent,
     NavigationBarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ReadmeComponent,
+    KulkiAppWrapperComponent
   ],
   imports: [
     BrowserModule,
