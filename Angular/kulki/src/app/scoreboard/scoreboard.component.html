@@ -1,22 +1,22 @@
 <div class="scoreboard">
     <button class="fullscreen_button" (click)="fullscreen()"></button>
-    <br><br><br>
-    <i class="game_name">KULKI</i>
-    <br><br><br>
+    <div class="game_name">
+        <i>KULKI</i>
+    </div>
     <div class="score">
-        WYNIK
+        <span>WYNIK</span>
         <br>
-        {{this.show_score()}}
+        <span>{{this.gameService.score_subject | async}}</span>
     </div>
     <br><br>
     <div class="best">
-        REKORD
+        <span>REKORD</span>
         <br>
-        {{this.show_best()}}
+        <span>{{this.gameService.best_subject | async}}</span>
     </div>
     <br><br>
     <div class="next">
-        <div *ngFor="let field of this.get_next();"
+        <div *ngFor="let field of next;"
         [ngClass]="{'blue': field == 'blue', 'purple': field == 'purple',
         'green': field == 'green', 'yellow': field == 'yellow',
         'orange': field == 'orange', 'brown': field == 'brown',

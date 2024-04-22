@@ -12,7 +12,11 @@ export class ScoreboardComponent implements OnInit {
     fullscreen_on: boolean = false;
     next: string[] = ['blue', 'green', 'yellow']
 
-    constructor(@Inject(DOCUMENT) private document: any, private gameService: GameService) { }
+    constructor(@Inject(DOCUMENT) private document: any, public gameService: GameService) {
+        this.gameService.next_subject.subscribe((next) => {
+            this.next = next;
+        });
+    }
 
     ngOnInit(): void {
         this.elem = document.documentElement;
@@ -50,19 +54,7 @@ export class ScoreboardComponent implements OnInit {
         }
     }
 
-    show_score(): number {
-        return this.gameService.get_score();
-    }
-
-    show_best(): number {
-        return this.gameService.get_best();
-    }
-
     new_game(): void {
-        this.gameService.new_game_call();
-    }
-
-    get_next(): string[] {
-        return this.gameService.get_next();
+        this.gameService.new_game();
     }
 }
