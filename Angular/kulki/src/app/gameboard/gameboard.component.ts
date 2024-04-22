@@ -21,7 +21,11 @@ export class GameboardComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.gameService.new_game();
+        if (this.gameService.first_game) {
+            this.gameService.new_game();
+        } else {
+            this.gameService.continue_game();
+        }
     }
 
     choose_field(field_num: number): void {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -19,6 +19,7 @@ export class GameService {
     to_clear: number[] = new Array();
     fields_subject: Subject<string[]> = new Subject();
     next_subject: Subject<string[]> = new Subject();
+    first_game: boolean = true;
 
     constructor() {
         let best: any = localStorage.getItem('best');
@@ -394,11 +395,18 @@ export class GameService {
     new_game(): void {
         this.initialize_gameboard();
         this.random_next();
-
         this.game_over_subject.next(false);
         this.score = 0;
         this.score_subject.next(0);
         this.add_random();
         this.fields_subject.next(this.fields);
+        this.first_game = false;
+    }
+
+    continue_game(): void {
+        this.score_subject.next(0);
+        this.fields_subject.next(this.fields);
+        this.next_subject.next(this.next);
+        this.best_subject.next(this.best);
     }
 }
