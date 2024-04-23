@@ -5,7 +5,7 @@ services:
     build: ./kulki_api
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./app/:/usr/src/app/
+      - ./kulki_api/:/usr/src/app/
     ports:
       - 8000:8000
     env_file:
