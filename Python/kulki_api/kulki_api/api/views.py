@@ -5,7 +5,7 @@ import json
 
 
 class SaveScoreView(View):
-    def post(self, request):
+    def put(self, request):
         try:
             body = json.loads(request.body)
             playerName = body["playerName"]
