@@ -27,4 +27,6 @@ class SaveScoreView(View):
 class GetScoresView(View):
     def get(self, request): 
         scores = Score.objects.all().order_by("-scoreDate").values()
-        return JsonResponse(list(scores), safe=False)
+        response = JsonResponse(list(scores), safe=False)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
