@@ -1,4 +1,4 @@
-.currencies_wrapper {
+.scores_wrapper {
     width: 50%;
     min-width: 360px;
     margin-left: auto;
@@ -7,14 +7,14 @@
     .date {
         font-size: 30px;
     }
-    .exchange_rates {
+    .scores {
         width: 100%;
         border: 1px var(--border_color) solid;
         border-radius: 10px;
         margin-bottom: 50px;
         display: flex;
         flex-wrap: wrap;
-        .exchange_card {
+        .score_card {
             flex: 0 0 16.6667%;
             font-size: 20px;
             max-width: 16.6667%;
@@ -25,7 +25,7 @@
             margin-right: auto;
             margin-top: 10px;
             margin-bottom: 10px;
-            min-width: 110px;
+            min-width: 160px;
             border-radius: 5px;
         }
     }

@@ -69,12 +69,12 @@
 
 .game_over {
     position: absolute;
-    width: 464.4px;
-    height: 464.4px;
+    width: 470px;
+    height: 470px;
     opacity: 0.75;
     background-color: black;
     background-image: none;
-    top: 10px;
+    top: 12.5px;
     left: 12.5px;
     text-align: center;
     color: white;
@@ -82,9 +82,39 @@
 
 .game_over_popup {
     position: relative;
-    top: 200px;
+    top: 150px;
 }
 
 .game_over_button {
     cursor: pointer;
+}
+
+.player_name_input {
+    display: block;
+    margin: auto;
+}
+
+.player_name_label {
+    display: block;
+}
+
+.form_container {
+    margin-top: 50px;
+}
+
+.save_score_button {
+    display: block;
+    margin: auto;
+}
+
+.error_text {
+    display: block;
+    margin: auto;
+    color: red;
+}
+
+.info_text {
+    display: block;
+    margin: auto;
+    color: green;
 }
