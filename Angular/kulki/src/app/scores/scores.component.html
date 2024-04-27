@@ -1,0 +1,12 @@
+<div class="scores_wrapper">
+    <div class="error" *ngIf="apiService.error">
+        Błąd przy pobieraniu wyników!<br><br>
+        <button class="game_over_button" (click)="get_scores()">Pobierz wyniki ponownie</button>
+    </div>
+    <p class="date">
+        Wyniki posortowane od najnowszych na dzień: {{current_date | date:"dd.MM.yyy"}}
+    </p>
+    <div class="scores">
+        <app-score-card *ngFor="let score of apiService.scores;" [score]="score" class="score_card"></app-score-card>
+    </div>
+</div>

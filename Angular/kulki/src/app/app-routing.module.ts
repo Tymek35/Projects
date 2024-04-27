@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GameWrapperComponent } from './game-wrapper/game-wrapper.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { CurrienciesComponent } from './curriencies/curriencies.component';
+import { ScoresComponent } from './scores/scores.component';
 import { GameRulesComponent } from './game-rules/game-rules.component';
 import { ReadmeComponent } from './readme/readme.component';
 import { KulkiAppWrapperComponent } from './kulki-app-wrapper/kulki-app-wrapper.component';
@@ -12,7 +12,7 @@ const routes: Routes = [
     {path: '', component: KulkiAppWrapperComponent, children: [
         {path: 'kulki', component: GameWrapperComponent},
         {path: 'zasady_gry', component: GameRulesComponent},
-        {path: 'waluty', component: CurrienciesComponent},
+        {path: 'wyniki', component: ScoresComponent},
         {path: 'readme', component: ReadmeComponent},
     ]},
     {path: 'lazy_loading', loadChildren: () => import('./lazy-loading/lazy-loading.module').then(m => m.LazyLoadingModule)},

@@ -1,8 +1,18 @@
 <div class="gameboard">
     <div class="game_over" *ngIf="game_over">
         <div class="game_over_popup">
-            Koniec gry!<br><br>
+            Koniec gry!<br>
             <button class="game_over_button" (click)="new_game()">Nowa gra</button>
+            <div class="form_container">
+                <label for="player_name_input" class="player_name_label">Nazwa gracza</label>
+                <input id="player_name_input" type="text" [formControl]="player_name_control" class="player_name_input"/>
+                <button id="save_button" class="save_score_button" (click)="save_score()">
+                    Zapisz wynik w bazie wyników
+                </button>
+                <span class="error_text" *ngIf="player_name_invalid">Niepoprawna nazwa gracza. Powinna mieć od 1 do 14 znaków.</span>
+                <span class="error_text" *ngIf="save_error">Błąd zapisu.</span>
+                <span class="info_text" *ngIf="saved">Wynik zapisany. Zajrzyj na tablicę wyników</span>
+            </div>
         </div>
     </div>
     <div class="game_table_container">
