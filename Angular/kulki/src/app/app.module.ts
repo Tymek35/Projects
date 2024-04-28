@@ -16,6 +16,7 @@ import { ReadmeComponent } from './readme/readme.component';
 import { KulkiAppWrapperComponent } from './kulki-app-wrapper/kulki-app-wrapper.component';
 import { ScoreCardComponent } from './score-card/score-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PageNotFoundComponent,
     ReadmeComponent,
     KulkiAppWrapperComponent,
-    ScoreCardComponent
+    ScoreCardComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
