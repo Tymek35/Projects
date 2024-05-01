@@ -1,0 +1,119 @@
+.portfolio_wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    min-width: 660px;
+}
+
+.main_column {
+    padding: 50px;
+    min-width: 660px;
+}
+
+.header {
+    overflow: hidden;
+}
+
+.summary {
+    float: left;
+    width: 50%;
+}
+
+.image_div {
+    width: 50%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image_img {
+    width: 280px;
+}
+
+.link {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.section {
+    border-top: 2px solid black;
+}
+
+.experience_section {
+    margin-top: 30px;
+}
+
+.section_header {
+    position: relative;
+    top: -35px;
+    text-align: center;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.experience_header {
+    width: 200px;
+}
+
+.job1 {
+    width: 50%;
+    float: left;
+}
+
+.job2 {
+    width: 50%;
+    overflow: hidden;
+}
+
+.impiLogo {
+    float: left;
+}
+
+.technologies {
+    margin-top: 50px;
+}
+
+.technologies_header {
+    width: 170px;
+}
+
+.technology_logo {
+    height: 80px;
+    display: block;
+    float: left;
+    padding: 20px;
+}
+
+.technologies_wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.info {
+    margin-top: 50px;
+}
+
+.info_header {
+    width: 170px;
+}
+
+.education_section {
+    margin-top: 30px;
+}
+
+.education_header {
+    width: 180px;
+}
+
+.UWLogo {
+    width: 70px;
+    float: left;
+    padding-right: 10px;
+}
