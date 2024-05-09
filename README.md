@@ -9,7 +9,8 @@ provided here.
 ## Python projects
 ### kulki_api
 Main project presenting my skills as backend developer. API for angular project kulki. It was
-created using Django framework and deployed using Docker.
+created using Django framework and deployed using Docker. To run locally use docker like
+`docker-compose up --build`.
 ### bachelors_thesis
 Computer simulation of branching annihilating random walk used to generate data for my bachelors
 thesis.
