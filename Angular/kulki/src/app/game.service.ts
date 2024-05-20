@@ -404,7 +404,7 @@ export class GameService {
     }
 
     continue_game(): void {
-        this.score_subject.next(0);
+        this.score_subject.next(this.score);
         this.fields_subject.next(this.fields);
         this.next_subject.next(this.next);
         this.best_subject.next(this.best);
