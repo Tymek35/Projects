@@ -66,12 +66,25 @@
 }
 
 .job2 {
+    height: 79px;
     width: 50%;
     overflow: hidden;
 }
 
 .impiLogo {
     float: left;
+    width: 70px;
+    height: 70px;
+    padding-right: 4px;
+}
+
+.ThePlayerLogo {
+    float: left;
+    width: 61px;
+    height: 61px;
+    padding: 9px;
+    padding-left: 4px !important;
+    padding-top: 4px !important;
 }
 
 .technologies {
